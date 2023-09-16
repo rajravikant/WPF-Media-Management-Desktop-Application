@@ -1,0 +1,252 @@
+﻿<Window x:Name="me" x:Class="Media_Management.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Media_Management"
+        xmlns:viewModel ="clr-namespace:Media_Management.MVVM.ViewModel"
+        xmlns:view ="clr-namespace:Media_Management.MVVM.View"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Height="800" Width="1280"
+        MinHeight="800" MinWidth="1280"
+        ResizeMode="CanResizeWithGrip" 
+        WindowState="Maximized"
+        WindowStyle="None"
+        Background="Transparent"
+       
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+
+
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <Grid Background="#212121" Grid.Row="0" MouseDown="Grid_MouseDown" x:Name="mainControlBar">
+        <!-- region hamburger menu -->
+            <Grid Width="30" Height="30" VerticalAlignment="Center" Margin="20 0 0 0" HorizontalAlignment="Left" >
+                <ToggleButton   x:Name="Tg_Btn" 
+                                    BorderThickness="0"
+                                    VerticalAlignment="Center"
+                                    
+                                    Unchecked="Tg_Btn_Unchecked" Checked="Tg_Btn_Checked"
+                                    Height="30" Width="30" 
+                                      
+                              
+                              >
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="/hamburgermenu.png" Stretch="Uniform"/>
+                    </ToggleButton.Background>
+
+                    <ToggleButton.Triggers>
+
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+
+                            <BeginStoryboard>
+
+                                <Storyboard x:Name="HideStackPanel">
+
+                                    <DoubleAnimation    
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="200" To="0"
+                                                Duration="0:0:0.2"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
+
+                            <BeginStoryboard>
+
+                                <Storyboard x:Name="ShowStackPanel">
+
+                                    <DoubleAnimation
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="0" To="200"
+                                                Duration="0:0:0.3"/>
+
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+
+                        </EventTrigger>
+
+
+                    </ToggleButton.Triggers>
+
+
+                </ToggleButton>
+
+            </Grid>
+            <!-- region hamburger menu end -->
+
+            <!-- top bar region -->
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right">
+                
+                <Button x:Name="BtnInfo" 
+                   Background="#5773FF"  VerticalAlignment="Top"
+                    BorderBrush="Transparent" Click="BtnInfo_Click">
+                    
+                    <Image Source="/Images/Photos/icons8-info-96.png" />
+                </Button>
+                    
+              
+                <Button x:Name="btnMinimize" 
+                    Background="Transparent"
+                    BorderBrush="Transparent"             
+                    Click="btnMinimize_Click"  >
+                    <Image Source="/Images/icons8-minimize-window-96.png" />
+                </Button>
+                <Button x:Name="btnRestore" 
+                    Background="Transparent"
+                    BorderBrush="Transparent"             
+                    Click="btnRestore_Click" >
+                    <Image Source="/Images/icons8-restore-down-96 (1).png" />
+                </Button>
+
+
+                <Button x:Name="btnClose" HorizontalAlignment="Right"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                     Click="btnClose_Click" 
+                     >
+
+
+                    <Image Source="/Images/Photos/icons8-close-window-100.png"/>
+                </Button>
+
+            </StackPanel>
+            
+
+        </Grid>
+
+        <!-- top bar region end -->
+
+        <Grid Grid.Row="1" Background="#212121">
+
+
+            <!-- side navigation region -->
+            <Grid x:Name="nav_pnl" HorizontalAlignment="Left" Width="200" Background="#5773FF" Grid.Row="1" >
+
+
+                <StackPanel  x:Name="sidePanel">
+
+                    <Grid Height="200">
+                        <TextBlock Text="A V I  S T U D I O"
+                                   Margin="5 20"
+                                   FontSize="25"
+                                   VerticalAlignment="Top"
+                                   HorizontalAlignment="Center" Foreground="Black">
+                            <TextBlock.Effect>
+                                <DropShadowEffect 
+                                    BlurRadius="10"
+                                    ShadowDepth="5"
+                                    Direction="-90"
+                                    Color="White">
+
+                                </DropShadowEffect>
+
+                            </TextBlock.Effect>
+                        </TextBlock>
+                        <Grid VerticalAlignment="Center" 
+                              HorizontalAlignment="Center" 
+                              Height="100" Width="150" Margin="0 50 0 0"
+                              >
+
+                            <Image Source="/aviw_prev_ui.png" />
+
+                        </Grid>
+                    </Grid>
+
+
+                    <RadioButton Style="{StaticResource MenuButtonTheme}"
+                              Command="{Binding VideoPageCommand}"
+                              Click="RadioButton_Click">
+
+                        <Grid HorizontalAlignment ="Left">
+
+                            <Image Source="/Images/icons8-video-48.png"
+
+                                   Style="{StaticResource Image_Style}" />
+                            <TextBlock 
+                                Text="Video" 
+                                Style="{StaticResource ResourceKey=Text_Style}"
+                                Margin="65 0 0 0"/>
+
+
+                        </Grid>
+
+                    </RadioButton>
+
+
+
+                    <RadioButton Style="{StaticResource MenuButtonTheme}"
+                              Command="{Binding AudioViewCommand}">
+
+                        <Grid HorizontalAlignment="Left" >
+
+                            <Image Source="/Images/icons8-music-48.png"
+
+                                   Style="{StaticResource Image_Style}" />
+                            <TextBlock 
+                                Text="Music" 
+                                Style="{StaticResource ResourceKey=Text_Style}"
+                                Margin="65 0 0 0"/>
+
+
+                        </Grid>
+
+                    </RadioButton>
+                    <RadioButton Style="{StaticResource MenuButtonTheme}"
+                              Command="{Binding PhotoViewCommand}">
+
+                        <Grid HorizontalAlignment="Left">
+
+                            <Image Source="/Images/icons8-photos-48.png"
+
+
+                        Style="{StaticResource Image_Style}" Margin="22,0,0,0" Width="30" />
+
+                            <TextBlock 
+                                Text="Photos" 
+                                Style="{StaticResource ResourceKey=Text_Style}"
+                                Margin="65 0 0 0"/>
+
+                        </Grid>
+
+                    </RadioButton>
+
+
+
+                </StackPanel>
+            </Grid>
+            <!-- side navigation region end -->
+
+
+            <ContentControl x:Name="cntControl" 
+                            Content="{Binding CurrentView}" Grid.Row="1"
+                            />
+
+        </Grid>
+    </Grid>
+</Window>
+
+        

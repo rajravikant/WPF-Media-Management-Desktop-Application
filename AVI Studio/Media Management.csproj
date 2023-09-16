@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{67277FD4-4D75-4EFA-9437-DF66776D8242}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Media_Management</RootNamespace>
+    <AssemblyName>AVI Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\WOODSLAYER\Desktop\avi_studio\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>M_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>EEF1B403A19041F0DA874DEF4AD7038CA7D39CC2</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Media Management_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
+      <HintPath>packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
+    </Reference>
+    <Reference Include="ExifLib, Version=1.7.0.0, Culture=neutral, PublicKeyToken=30284005913968db, processorArchitecture=MSIL">
+      <HintPath>packages\ExifLib.1.7.0.0\lib\net45\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
+      <HintPath>packages\MahApps.Metro.2.4.9\lib\net47\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack-Core.1.1.1\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\WindowsAPICodePack-Shell.1.1.1\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Xaml.Behaviors.Wpf.1.1.19\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Tabulate.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Tabulate.NET.1.0.5\lib\Tabulate.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="TagLibSharp, Version=2.3.0.0, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL">
+      <HintPath>packages\TagLibSharp.2.3.0\lib\net462\TagLibSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="AboutUs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutUs.Designer.cs">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Core\Btn.cs" />
+    <Compile Include="Core\ObservableObject.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="MainWindow.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MVVM\View\AudioViewPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\PhotoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\testviewpage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MVVM\View\VideoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\AudioViewTheme\Button.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\AudioViewTheme\Image.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\AudioViewTheme\playlistCurrentTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\AudioViewTheme\Text.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\Image.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\MenuButtonTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\SliderTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\tabControlStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\Text.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Theme\volumeSliderTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MVVM\ViewModel\AudioPageModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\PhotoViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\testviewmodel.cs" />
+    <Compile Include="MVVM\ViewModel\VideoPageModel.cs" />
+    <Compile Include="MVVM\View\AudioViewPage.xaml.cs">
+      <DependentUpon>AudioViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\PhotoView.xaml.cs">
+      <DependentUpon>PhotoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\testviewpage.xaml.cs">
+      <DependentUpon>testviewpage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\VideoPage.xaml.cs">
+      <DependentUpon>VideoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="AboutUs.resx">
+      <DependentUpon>AboutUs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Resource Include="Fonts\Rubik-Medium.ttf" />
+    <Resource Include="Fonts\Rubik-Regular.ttf" />
+    <None Include="Media Management_TemporaryKey.pfx" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MVVM\Model\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-restore-down-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-subtract-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-play-button-circled-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-pause-button-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-fast-forward-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-rewind-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-no-audio-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-audio-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-info-48.png" />
+    <Resource Include="Images\icons8-maximize-window-48.png" />
+    <Resource Include="Images\icons8-music-48.png" />
+    <Resource Include="Images\icons8-photos-48.png" />
+    <Resource Include="Images\icons8-settings-48.png" />
+    <Resource Include="Images\icons8-subtract-48.png" />
+    <Resource Include="Images\icons8-video-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-musical-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-play-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-pause-squared-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-end-60.png" />
+    <Resource Include="Images\icons8-pause-60.png" />
+    <Resource Include="Images\icons8-skip-to-start-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-repeat-60.png" />
+    <Resource Include="Images\icons8-shuffle-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-mute-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-no-audio-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-add-64.png" />
+    <Resource Include="Images\icons8-favorite-96.png" />
+    <Resource Include="Images\icons8-list-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-import-60.png" />
+    <Resource Include="Images\icons8-photo-album-48.png" />
+    <Resource Include="Images\icons8-to-do-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-photo-album-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\icons8-crop-96.png" />
+    <Resource Include="Images\Photos\icons8-print-96.png" />
+    <Resource Include="Images\Photos\icons8-rotate-96.png" />
+    <Resource Include="Images\Photos\icons8-trash-96.png" />
+    <Resource Include="Images\Photos\icons8-zoom-in-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\icons8-add-image-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\icons8-info-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\icons8-close-window-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-minimize-window-96.png" />
+    <Resource Include="Images\icons8-restore-down-96 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\hamburgermenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="hamburgermenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="M_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-fast-forward-50.png" />
+    <Resource Include="Images\icons8-play-50.png" />
+    <Resource Include="Images\icons8-rewind-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-stop-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-mute-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\icons8-zoom-out-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\icons8-import-100.png" />
+    <Resource Include="Images\Photos\icons8-save-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-import-100.png" />
+    <Resource Include="Images\icons8-save-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-audio-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-shuffle-g-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-repeat-one-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-pause-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\icons8-audio-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="avi2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="aviw_prev_ui.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

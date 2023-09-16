@@ -1,0 +1,64 @@
+﻿<Application x:Class="Media_Management.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel="clr-namespace:Media_Management.MVVM.ViewModel"
+             xmlns:view="clr-namespace:Media_Management.MVVM.View"
+             StartupUri="MainWindow.xaml"
+             >
+
+    
+    
+    <Application.Resources>
+        <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                    <ResourceDictionary Source="Theme/Image.xaml"/>
+                    <ResourceDictionary Source="Theme/Text.xaml"/>
+                    <ResourceDictionary Source="Theme/AudioViewTheme/Button.xaml"/>
+                    <ResourceDictionary Source="Theme/AudioViewTheme/Image.xaml"/>
+                    <ResourceDictionary Source="Theme/AudioViewTheme/Text.xaml"/>
+                    <ResourceDictionary Source="Theme/SliderTheme.xaml"/>
+                    <ResourceDictionary Source="Theme/volumeSliderTheme.xaml"/>
+                    <ResourceDictionary Source="Theme/AudioViewTheme/playlistCurrentTheme.xaml"/>
+                    <ResourceDictionary Source="Theme/tabControlStyle.xaml"/>
+
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                     
+                        <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+           
+            
+                    <DataTemplate DataType="{x:Type viewModel:VideoPageModel}">
+                        <view:VideoPage/>
+                    </DataTemplate>
+
+                    <DataTemplate DataType="{x:Type viewModel:PhotoViewModel}">
+                        <view:PhotoView/>
+                    </DataTemplate>
+            
+                    <DataTemplate DataType="{x:Type viewModel:AudioPageModel}">
+                        <view:AudioViewPage/>
+                    </DataTemplate>
+            
+                    <DataTemplate DataType="{x:Type viewModel:testviewmodel}">
+                        <view:testviewpage/>
+                    </DataTemplate>
+
+  
+
+
+
+
+        </ResourceDictionary>
+  
+        
+        
+    
+
+
+
+    </Application.Resources>
+
+
+</Application>
